@@ -98,3 +98,5 @@ This project would not have been possible without inspiration and contributions 
 ---
 
 🔥 **Transform your Discord experience with 0ldscr33n and relive the golden age of CRT monitors!** 🔥
+
+###### This project has been debugged, reviewed, and modified with assistance from AI tools to improve structure, readability, and functionality. 
