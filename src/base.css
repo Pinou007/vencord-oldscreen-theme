@@ -1,0 +1,82 @@
+:root {
+    --font: 'Courier New';
+    letter-spacing: -0.05ch;
+    font-weight: 400;
+    --label-font-weight: 600;
+    --corner-text: 'VENDCORD';
+    --pad: 16px;
+    --txt-pad: 10px;
+    --panel-roundness: 0px;
+
+    --bg-0: rgba(0, 10, 0, 0.9);
+    --bg-1: rgba(0, 15, 0, 0.8);
+    --bg-2: rgba(0, 20, 0, 0.7);
+    --bg-3: rgba(0, 25, 0, 0.6);
+
+    --hover: rgba(0, 255, 0, 0.1);
+    --active: rgba(0, 255, 0, 0.2);
+    --selected: var(--active);
+
+    --green: #0f0;
+    --green-1: #0a0;
+    --green-2: #070;
+    --green-glow: 0 0 5px var(--green);
+
+    --border-width: 1px;
+    --border-color: var(--green);
+    --border-transition: 0.2s ease;
+
+    --font-title: 'VT323', 'Courier New', monospace;
+    --font-text: 'IBM Plex Mono', 'Courier New', monospace;
+    --scanline-size: 2px;
+    --old-shadow: 0 0 2px var(--green);
+}
+
+/* Style des icônes */
+svg path,
+.icon-2xnN2Y,
+.icon-1DeIlz,
+.actionIcon-2sw4Sl,
+.icon-1WVg4I,
+.iconContainer-1RqWJj * {
+    color: var(--green) !important;
+    fill: var(--green) !important;
+    filter: drop-shadow(0 0 2px var(--green));
+}
+
+/* Style des titres */
+h1, h2, h3, h4, h5, h6,
+.title-3qD0b-,
+.header-23xsNx,
+.name-uJV0GL,
+.channelName-2YrOjO {
+    font-family: var(--font-title) !important;
+    font-weight: bold !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: var(--old-shadow) !important;
+}
+
+/* Style du texte général */
+* {
+    font-family: var(--font-text) !important;
+}
+
+/* Effet vieux moniteur */
+.app-2rEoOp::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 999997;
+    opacity: 0.3;
+} 

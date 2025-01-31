@@ -1,0 +1,198 @@
+@keyframes scanline {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes linkPulse {
+    0%, 100% { color: var(--green); }
+    50% { color: var(--green-1); }
+}
+
+/* Animation de scan d'écran */
+#app-mount::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    pointer-events: none;
+    z-index: 999999;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: 0.5;
+    animation: scanline 0.5s linear infinite;
+}
+
+/* Filtre vert global */
+#app-mount::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 0%, var(--bg-0) 100%);
+    pointer-events: none;
+    z-index: 999998;
+    opacity: 0.1;
+}
+
+/* Animation d'écriture */
+.slateTextArea-1Mkdgw:focus-within {
+    animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { border-right: 2px solid var(--green); }
+    50% { border-right: 2px solid transparent; }
+}
+
+/* Animation de survol améliorée */
+.clickable-1JJAn8,
+.interactive-3B9GmY,
+.wrapper-1BJsBx,
+.channel-2QD9_O,
+.member-3-YXUe,
+.button-38aScr,
+.item-PXvHYJ,
+.container-2Pjhx-,
+.role-2irmRk,
+.messageContent-2qWWxC a {
+    position: relative;
+    overflow: visible;
+}
+
+/* Barre animée sous les éléments cliquables */
+.clickable-1JJAn8::after,
+.interactive-3B9GmY::after,
+.wrapper-1BJsBx::after,
+.channel-2QD9_O::after,
+.member-3-YXUe::after,
+.button-38aScr::after,
+.item-PXvHYJ::after,
+.container-2Pjhx-::after,
+.role-2irmRk::after,
+.messageContent-2qWWxC a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent,
+        var(--green),
+        var(--green-1),
+        var(--green),
+        transparent
+    );
+    transition: width 0.3s ease;
+    box-shadow: 0 0 5px var(--green);
+    z-index: 1;
+}
+
+/* Animation au survol */
+.clickable-1JJAn8:hover::after,
+.interactive-3B9GmY:hover::after,
+.wrapper-1BJsBx:hover::after,
+.channel-2QD9_O:hover::after,
+.member-3-YXUe:hover::after,
+.button-38aScr:hover::after,
+.item-PXvHYJ:hover::after,
+.container-2Pjhx-:hover::after,
+.role-2irmRk:hover::after,
+.messageContent-2qWWxC a:hover::after {
+    width: 100%;
+}
+
+/* Animation des liens */
+.messageContent-2qWWxC a {
+    position: relative;
+    color: var(--green) !important;
+    text-decoration: none !important;
+    animation: linkGlow 2s infinite;
+    padding: 0 4px;
+}
+
+@keyframes linkGlow {
+    0%, 100% {
+        text-shadow: 0 0 5px transparent;
+    }
+    50% {
+        text-shadow: 0 0 10px var(--green);
+    }
+}
+
+/* Effet de glitch sur les titres au survol */
+.title-3qD0b-:hover,
+.header-23xsNx:hover {
+    animation: glitchText 0.3s infinite;
+}
+
+@keyframes glitchText {
+    0% {
+        transform: translate(0);
+        text-shadow: 0 0 5px var(--green);
+    }
+    25% {
+        transform: translate(-1px, 1px);
+        text-shadow: -1px 0 5px var(--green-1);
+    }
+    50% {
+        transform: translate(1px, -1px);
+        text-shadow: 1px 0 5px var(--green);
+    }
+    75% {
+        transform: translate(-1px, -1px);
+        text-shadow: -1px 0 5px var(--green-1);
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: 0 0 5px var(--green);
+    }
+}
+
+/* Animation de chargement des images */
+.imageWrapper-2p5ogY::before {
+    content: 'LOADING...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--green);
+    font-family: var(--font-title);
+    animation: loadingText 1s infinite;
+    z-index: 1;
+}
+
+@keyframes loadingText {
+    0%, 100% { content: 'LOADING...'; }
+    33% { content: 'LOADING..'; }
+    66% { content: 'LOADING.'; }
+}
+
+/* Animation des mentions */
+.mentioned-xhSam7 {
+    animation: mentionPulse 2s infinite;
+}
+
+@keyframes mentionPulse {
+    0%, 100% {
+        background-color: rgba(0, 255, 0, 0.1);
+    }
+    50% {
+        background-color: rgba(0, 255, 0, 0.2);
+    }
+}
+
+/* Effet Matrix sur le scroll */
+::-webkit-scrollbar-thumb {
+    background: var(--green) !important;
+    box-shadow: 0 0 10px var(--green) !important;
+    animation: matrixScroll 1s linear infinite;
+}
+
+@keyframes matrixScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+} 

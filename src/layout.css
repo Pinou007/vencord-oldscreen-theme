@@ -1,0 +1,40 @@
+/* Styles de base */
+.theme-dark {
+    --background-primary: var(--bg-0);
+    --background-secondary: var(--bg-1);
+    --background-tertiary: var(--bg-2);
+    --text-normal: var(--txt-0);
+    --header-primary: var(--txt-1);
+    --interactive-active: var(--txt-1);
+    --interactive-hover: var(--txt-0);
+}
+
+/* Serveurs */
+.wrapper-3kah-n .childWrapper-1j_1ub {
+    background-color: var(--bg-1);
+}
+
+.wrapper-3kah-n:hover .childWrapper-1j_1ub {
+    background-color: var(--bg-2);
+}
+
+/* Profil sections */
+.userPopout-2j1gM4 .header-3OsQeK {
+    grid-column: 1;
+    padding: 16px;
+    border-bottom: 1px solid var(--green);
+}
+
+.userPopout-2j1gM4 .aboutMeSection-3YIa8R {
+    grid-column: 1;
+    padding: 16px;
+    background-color: var(--bg-1);
+}
+
+.userPopout-2j1gM4 .rolesList-3uZoaa {
+    grid-column: 1;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+} 

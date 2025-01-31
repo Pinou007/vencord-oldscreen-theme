@@ -1,0 +1,498 @@
+/* Configuration du thème Vendcord */
+@import url("https://discord.com/assets/0.css");
+
+/* Importation de nos modules */
+@import url("base.css");
+@import url("animations.css");
+
+/* Règles spécifiques pour Discord */
+#app-mount::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: gradientChange 0.1s infinite;
+    background: linear-gradient(rgba(0, 25, 0, 0.3), rgba(0, 0, 0, 0) 100%);
+    opacity: 0.8;
+}
+
+/* Ajustement des couleurs de base de Discord */
+.theme-dark {
+    --background-primary: rgba(0, 10, 0, 0.9);
+    --background-secondary: rgba(0, 15, 0, 0.8);
+    --background-tertiary: rgba(0, 20, 0, 0.7);
+    --text-normal: #00ff00;
+    --header-primary: #00ff00;
+    --background-profile: rgba(0, 25, 0, 0.8);
+    --notification-color: #00ff00;
+    --textbox-background: rgba(0, 40, 0, 0.3);
+    --padding-standard: 12px;
+}
+
+/* Renforcement de la suppression des arrondis et ajout des styles d'icônes */
+* {
+    border-radius: 0 !important;
+}
+
+/* Style des icônes et logos */
+svg path, 
+.icon-2xnN2Y,
+.iconWrapper-2awDjA * {
+    color: var(--text-normal) !important;
+    fill: var(--text-normal) !important;
+    filter: drop-shadow(0 0 2px rgba(0, 255, 0, 0.5));
+}
+
+/* Suppression des arrondis sur hover et focus */
+*:hover,
+*:focus,
+*:active,
+button,
+.button-38aScr,
+.item-PXvHYJ,
+.wrapper-1BJsBx,
+.wrapper-2jXpOf,
+.container-1r6BKw,
+.children-19S4PO,
+.searchBar-3dMhjb,
+.input-2_SIlA,
+.layout-2DM8Md {
+    border-radius: 0 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Animations au survol */
+.button-38aScr:hover,
+.item-PXvHYJ:hover,
+.member-3-YXUe:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    background-color: rgba(0, 255, 0, 0.1) !important;
+}
+
+/* Style des barres de défilement */
+::-webkit-scrollbar {
+    width: 8px !important;
+    background: var(--background-tertiary) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-normal) !important;
+    border-radius: 0 !important;
+}
+
+/* Style des éléments de sélection */
+::selection {
+    background-color: rgba(0, 255, 0, 0.3);
+    color: var(--text-normal);
+}
+
+/* Style des inputs et zones de texte */
+input, textarea, .input-2_SIlA {
+    border: 1px solid var(--text-normal) !important;
+    background-color: var(--background-profile) !important;
+    transition: all 0.2s ease !important;
+}
+
+input:focus, textarea:focus, .input-2_SIlA:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3) !important;
+    border-color: var(--text-normal) !important;
+}
+
+/* Style des menus et popups */
+.menu-3sdvDG,
+.contextMenu-HLZMGh,
+.submenu-2-ysNh,
+.popout-2iWAc-,
+.container-3ayLPN,
+.userPopout-xaxa6l,
+.modal-yWgWj-,
+.root-1gCeng {
+    border: 1px solid var(--text-normal) !important;
+    background-color: var(--background-profile) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2) !important;
+    animation: menuAppear 0.2s ease;
+}
+
+/* Animation pour les menus */
+@keyframes menuAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style des serveurs et des badges */
+.wrapper-1BJsBx,
+.folder-1hbNCn,
+.badge-1Skb69 {
+    background-color: var(--background-profile) !important;
+    border: 1px solid var(--text-normal) !important;
+}
+
+/* Style des mentions et notifications */
+.mention,
+.mentioned-xhSam7,
+.numberBadge-2s8kKX {
+    background-color: rgba(0, 255, 0, 0.2) !important;
+    color: var(--text-normal) !important;
+    border: 1px solid var(--text-normal) !important;
+}
+
+/* Style des titres et textes importants */
+h1, h2, h3, h4, h5, h6,
+.title-3qD0b-, .header-23xsNx,
+.headerText-3Uvj1Y, .name-uJV0GL,
+.username-1A8OIy, .channelName-2YrOjO {
+    font-weight: bold !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Style des profils */
+.userPopout-xaxa6l,
+.profilePanel-2PWEok,
+.userProfileOuterThemed-3EfHmv,
+.userProfileInner-1ngxzG {
+    background-color: var(--background-profile) !important;
+    border: 1px solid var(--text-normal) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3) !important;
+}
+
+/* Style des avatars */
+.avatar-37jOim,
+.avatarWrapper-2yR4wp,
+.wrapper-3t9DeA {
+    border: 1px solid var(--text-normal) !important;
+    background-color: var(--background-profile) !important;
+}
+
+/* Style des boutons */
+.button-38aScr {
+    background-color: var(--background-profile) !important;
+    border: 1px solid var(--text-normal) !important;
+}
+
+/* Style des liens avec animation */
+a {
+    color: var(--text-normal) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    transition: all 0.2s ease !important;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-normal);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Force les avatars carrés dans la liste MP */
+.avatar-2e8lTP,
+.avatar-3W3CeO,
+.wrapper-3t9DeA,
+.avatar-1BDn8e,
+.layout-2DM8Md .avatar-37jOim {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Force les serveurs carrés */
+.wrapper-1BJsBx,
+.folder-1hbNCn,
+.circleIconButton-1QV--U,
+.childWrapper-anI2G9,
+.wrapper-3t9DeA {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+.pill-31IEus {
+    overflow: visible !important;
+}
+
+/* Animation des messages */
+.message-2qnXI6 {
+    animation: messageSlide 0.3s ease;
+    transform-origin: top;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation des changements de page */
+.container-1D34oG,
+.chat-3bRxxu,
+.container-1a3EgQ {
+    animation: pageTransition 0.3s ease;
+}
+
+@keyframes pageTransition {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation des popups et menus */
+.layer-v9HyYc,
+.menu-3sdvDG,
+.popout-2iWAc- {
+    animation: popupAppear 0.2s ease;
+    transform-origin: top;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Amélioration du style des serveurs */
+.wrapper-1BJsBx {
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+}
+
+.wrapper-1BJsBx:hover {
+    border-color: var(--text-normal) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+/* Animation du clic droit */
+.menu-3sdvDG {
+    animation: rightClickMenu 0.3s cubic-bezier(0.2, 0.6, 0.2, 1.1);
+    transform-origin: top left;
+    border: 1px solid var(--text-normal) !important;
+}
+
+@keyframes rightClickMenu {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* Animation de l'écriture */
+.slateTextArea-1Mkdgw:focus div[data-slate-node="element"] {
+    animation: textTyping 0.5s ease;
+}
+
+@keyframes textTyping {
+    0% {
+        border-right: 2px solid var(--text-normal);
+    }
+    50% {
+        border-right: 2px solid transparent;
+    }
+    100% {
+        border-right: 2px solid var(--text-normal);
+    }
+}
+
+/* Animation des liens */
+a {
+    animation: linkColor 2s infinite !important;
+    text-decoration: none !important;
+    position: relative !important;
+}
+
+@keyframes linkColor {
+    0% {
+        color: rgb(0, 255, 0) !important;
+    }
+    50% {
+        color: rgb(0, 180, 0) !important;
+    }
+    100% {
+        color: rgb(0, 255, 0) !important;
+    }
+}
+
+/* Restauration des avatars de serveur ronds */
+.wrapper-1BJsBx .icon-27yU2q,
+.wrapper-1BJsBx .iconWrapper-2awDjA,
+.wrapper-1BJsBx img {
+    border-radius: 50% !important;
+}
+
+/* Nouveau style de profil */
+.userPopout-xaxa6l {
+    display: grid !important;
+    grid-template-columns: 250px 120px !important;
+    grid-template-rows: auto !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    max-width: 400px !important;
+    border: 1px solid var(--text-normal) !important;
+}
+
+/* Bannière verticale */
+.userPopout-xaxa6l .banner-2QYc2d {
+    grid-column: 2 !important;
+    grid-row: 1 / span 4 !important;
+    height: 100% !important;
+    min-height: 300px !important;
+    border-left: 1px solid var(--text-normal) !important;
+}
+
+/* Avatar sur la bannière */
+.userPopout-xaxa6l .avatarWrapper-2yR4wp {
+    position: absolute !important;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 2 !important;
+    border: 2px solid var(--text-normal) !important;
+}
+
+/* Informations principales */
+.userPopout-xaxa6l .headerText-1HLrL7 {
+    grid-column: 1 !important;
+    padding: var(--padding-standard) !important;
+    background-color: var(--background-profile) !important;
+    border-bottom: 1px solid var(--text-normal) !important;
+}
+
+/* Section About Me */
+.userPopout-xaxa6l .aboutMeSection-1Fw5Ia {
+    grid-column: 1 !important;
+    padding: var(--padding-standard) !important;
+    background-color: var(--background-tertiary) !important;
+}
+
+/* Roles */
+.userPopout-xaxa6l .rolesList-22qj2L {
+    grid-column: 1 !important;
+    padding: var(--padding-standard) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+}
+
+.userPopout-xaxa6l .role-2irmRk {
+    padding: 5px 8px !important;
+    border: 1px solid var(--text-normal) !important;
+    background-color: var(--background-profile) !important;
+}
+
+/* Note de l'utilisateur */
+.userPopout-xaxa6l .note-1oo11U {
+    grid-column: 1 !important;
+    padding: var(--padding-standard) !important;
+    background-color: var(--background-secondary) !important;
+    border-top: 1px solid var(--text-normal) !important;
+}
+
+/* Animation de survol pour les éléments interactifs */
+.interactive-1FxC7B:hover,
+.member-3-YXUe:hover {
+    background-color: var(--background-profile) !important;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+}
+
+/* Style de la zone de texte */
+.channelTextArea-2VhZ6z {
+    background-color: var(--textbox-background) !important;
+    padding: var(--padding-standard) !important;
+    border: 1px solid var(--text-normal) !important;
+    margin: 10px !important;
+}
+
+.slateTextArea-1Mkdgw {
+    background-color: transparent !important;
+    color: var(--text-normal) !important;
+}
+
+/* Modification des notifications */
+.numberBadge-2s8kKX,
+.base-PmTxvP,
+.badge-1Skb69,
+.numberBadge-37OJ3S {
+    background-color: var(--notification-color) !important;
+    color: var(--background-tertiary) !important;
+    font-weight: bold !important;
+    padding: 4px 6px !important;
+    border: none !important;
+}
+
+/* Ajout de padding général */
+.container-2cd8Mz,
+.container-36u7Lw,
+.container-1r6BKw,
+.members-1998pB,
+.member-3-YXUe,
+.message-2qnXI6,
+.channelName-2YrOjO,
+.content-1x5b-n {
+    padding: var(--padding-standard) !important;
+    margin: 2px 0 !important;
+}
+
+/* Animation du curseur d'écriture */
+.slateTextArea-1Mkdgw::after {
+    content: '|';
+    animation: cursorBlink 1s infinite;
+    color: var(--text-normal);
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Animation des clics */
+.clickable-1JJAn8:active {
+    animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+} 

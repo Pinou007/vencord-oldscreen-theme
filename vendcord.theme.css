@@ -1,0 +1,258 @@
+/**
+ * @name 0ldscr33n 
+ * @description A Vendcord theme designed to replicate the look of an old black-and-green CRT screen, with additional modifications to enhance the retro aesthetic and improve usability. (Forked from Anora09c's old-screen-theme-vencord and refact0r's system24)
+ * @author Pinou007 (www.pinou007.fr)
+ * @version 1.1.0
+ * @source https://github.com/Pinou007/Vendcord
+ * @invite https://discord.gg/9HxWpkubkJ
+ * @authorId 1137131494435979294
+ *
+ *
+ * 
+ *               _________.__                     _______  ________________ 
+ *               \______   \__| ____   ____  __ __ \   _  \ \   _  \______  \
+ *               |     ___/  |/    \ /  _ \|  |  \/  /_\  \/  /_\  \  /    /
+ *               |    |   |  |   |  (  <_> )  |  /\  \_/   \  \_/   \/    / 
+ *               |____|   |__|___|  /\____/|____/  \_____  /\_____  /____/  
+ *                                \/                     \/       \/      
+ *
+ *
+ *
+ * Inspiré par :
+ * - Anora09c (old-screen-theme-vencord)
+ * - refact0r (system24)
+ * - Vencord 
+ */
+
+
+
+@import url("src/base.css");
+@import url("src/animations.css");
+@import url("src/emojis.css");
+@import url("src/profiles.css");
+@import url("src/components.css");
+@import url("src/layout.css");
+@import url('https://refact0r.github.io/system24/src/unrounding.css');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+/* Configuration de base */
+:root {
+    /* Configuration de l'interface */
+    --font: 'Courier New';
+    letter-spacing: -0.05ch;
+    font-weight: 400;
+    --label-font-weight: 600;
+    --corner-text: 'VENDCORD';
+    --pad: 16px;
+    --txt-pad: 10px;
+    --panel-roundness: 0px;
+
+    /* Couleurs de fond */
+    --bg-0: rgba(0, 10, 0, 0.9);
+    --bg-1: rgba(0, 15, 0, 0.8);
+    --bg-2: rgba(0, 20, 0, 0.7);
+    --bg-3: rgba(0, 25, 0, 0.6);
+
+    /* États */
+    --hover: rgba(0, 255, 0, 0.1);
+    --active: rgba(0, 255, 0, 0.2);
+    --selected: var(--active);
+
+    /* Couleurs de texte */
+    --txt-dark: var(--bg-0);
+    --txt-link: var(--green);
+    --txt-0: #00ff00;
+    --txt-1: rgba(0, 255, 0, 0.8);
+    --txt-2: rgba(0, 255, 0, 0.6);
+    --txt-3: rgba(0, 255, 0, 0.4);
+
+    /* Couleurs d'accent */
+    --acc-0: var(--green);
+    --acc-1: var(--green-1);
+    --acc-2: var(--green-2);
+
+    /* Bordures */
+    --border-width: 1px;
+    --border-color: var(--green);
+    --border-hover-color: var(--green-1);
+    --border-transition: 0.2s ease;
+
+    /* Points de statut */
+    --online-dot: var(--green);
+    --dnd-dot: var(--green-2);
+    --idle-dot: var(--green-1);
+    --streaming-dot: var(--green);
+
+    /* Mentions et messages */
+    --mention-txt: var(--green);
+    --mention-bg: rgba(0, 255, 0, 0.1);
+    --mention-overlay: rgba(0, 255, 0, 0.1);
+    --mention-hover-overlay: rgba(0, 255, 0, 0.15);
+    --reply-overlay: var(--active);
+    --reply-hover-overlay: var(--hover);
+
+    /* Nuances de vert */
+    --green: #00ff00;
+    --green-1: #00cc00;
+    --green-2: #009900;
+
+    /* Effets spéciaux */
+    --glow-effect: 0 0 10px rgba(0, 255, 0, 0.3);
+    --scan-opacity: 0.3;
+    --scan-speed: 2s;
+}
+
+/* Styles de base */
+.theme-dark {
+    --background-primary: var(--bg-0);
+    --background-secondary: var(--bg-1);
+    --background-tertiary: var(--bg-2);
+    --text-normal: var(--txt-0);
+    --header-primary: var(--txt-1);
+    --interactive-active: var(--txt-1);
+    --interactive-hover: var(--txt-0);
+}
+
+/* Effet de scan */
+#app-mount::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: linear-gradient(rgba(0, 255, 0, 0.1), transparent);
+    opacity: var(--scan-opacity);
+    animation: scanline var(--scan-speed) linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Style des emojis */
+.emoji-1iCJdQ,
+.emojiContainer-2tGY4P,
+.emoji-3QUc7o {
+    filter: grayscale(100%) sepia(100%) hue-rotate(90deg) brightness(150%) !important;
+    transform: scale(1.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+.emoji-1iCJdQ:hover,
+.emojiContainer-2tGY4P:hover,
+.emoji-3QUc7o:hover {
+    filter: grayscale(0%) sepia(0%) !important;
+    transform: scale(1.4) !important;
+}
+
+/* Style des messages */
+.message-2CShn3 {
+    padding: var(--txt-pad) !important;
+    margin: 4px var(--pad) !important;
+    border-left: var(--border-width) solid transparent !important;
+    transition: var(--border-transition) !important;
+}
+
+.message-2CShn3:hover {
+    border-left-color: var(--border-color) !important;
+    background-color: var(--hover) !important;
+    padding-left: calc(var(--txt-pad) + 4px) !important;
+}
+
+/* Style des liens */
+a {
+    color: var(--txt-link) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    animation: linkPulse 2s infinite !important;
+    padding: 2px 4px !important;
+}
+
+@keyframes linkPulse {
+    0%, 100% { color: var(--green) !important; }
+    50% { color: var(--green-1) !important; }
+}
+
+/* Notifications */
+.numberBadge-37OJ3S,
+.base-3IDx3L,
+.numberBadge-37OJ3S,
+.base-PmTxvP,
+.numberBadge-2s8kKX,
+.base-2v-uc0 {
+    background-color: var(--green) !important;
+    color: var(--bg-3) !important;
+    font-weight: bold !important;
+}
+
+/* Serveurs */
+.wrapper-3kah-n .childWrapper-1j_1ub {
+    background-color: var(--bg-1) !important;
+}
+
+.wrapper-3kah-n:hover .childWrapper-1j_1ub {
+    background-color: var(--bg-2) !important;
+}
+
+/* Profil popup */
+.userPopout-2j1gM4 {
+    background-color: var(--bg-2) !important;
+    border: 1px solid var(--green) !important;
+    display: grid !important;
+    grid-template-columns: 250px 120px !important;
+    max-width: 400px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.userPopout-2j1gM4 .banner-1YaD3N {
+    grid-column: 2 !important;
+    grid-row: 1 / span 4 !important;
+    height: 100% !important;
+    min-height: 300px !important;
+    border-left: 1px solid var(--green) !important;
+}
+
+.userPopout-2j1gM4 .header-3OsQeK {
+    grid-column: 1 !important;
+    padding: 16px !important;
+    border-bottom: 1px solid var(--green) !important;
+}
+
+.userPopout-2j1gM4 .avatar-2Vndt_ {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    border: 2px solid var(--green) !important;
+    z-index: 2 !important;
+}
+
+.userPopout-2j1gM4 .aboutMeSection-3YIa8R {
+    grid-column: 1 !important;
+    padding: 16px !important;
+    background-color: var(--bg-1) !important;
+}
+
+.userPopout-2j1gM4 .rolesList-3uZoaa {
+    grid-column: 1 !important;
+    padding: 16px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+}
+
+/* Messages et zones de texte */
+.channelTextArea-1FufC0 {
+    background-color: var(--bg-1) !important;
+    border: 1px solid var(--green) !important;
+    margin: 16px !important;
+    padding: 10px !important;
+}
+
+.channelTextArea-1FufC0 .scrollableContainer-15eg7h {
+    background-color: transparent !important;
+} 

@@ -1,0 +1,13 @@
+:root {
+    --overlay-color: rgba(0, 25, 0, 0.6);
+    --text-glow: 0 0 20px rgba(0, 255, 0, 1);
+    --font-primary: 'Courier New', Courier, monospace;
+}
+
+/* Application des styles de base */
+* {
+    font-family: var(--font-primary) !important;
+    text-shadow: var(--text-glow) !important;
+}
+
+/* Suppression du body::after précédent car remplacé par #app-mount::before */ 

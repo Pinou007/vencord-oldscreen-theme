@@ -1,0 +1,108 @@
+/* Messages et zones de texte */
+.channelTextArea-1FufC0,
+.scrollableContainer-15eg7h {
+    background-color: var(--bg-1) !important;
+    border: 1px solid var(--green) !important;
+    box-shadow: inset 0 0 5px var(--green) !important;
+}
+
+.channelTextArea-1FufC0 .scrollableContainer-15eg7h {
+    background-color: transparent;
+}
+
+/* Style des messages */
+.message-2CShn3 {
+    padding: var(--txt-pad);
+    margin: 4px var(--pad);
+    border-left: var(--border-width) solid transparent;
+    transition: var(--border-transition);
+}
+
+.message-2CShn3:hover {
+    border-left-color: var(--border-color);
+    background-color: var(--hover);
+    padding-left: calc(var(--txt-pad) + 4px);
+}
+
+/* Notifications */
+.numberBadge-37OJ3S,
+.base-3IDx3L,
+.numberBadge-37OJ3S,
+.base-PmTxvP,
+.numberBadge-2s8kKX,
+.base-2v-uc0 {
+    background-color: var(--green);
+    color: var(--bg-3);
+    font-weight: bold;
+}
+
+/* Style des liens */
+a {
+    color: var(--txt-link);
+    text-decoration: none;
+    position: relative;
+    animation: linkPulse 2s infinite;
+    padding: 2px 4px;
+}
+
+/* Style des boutons */
+.button-38aScr {
+    background: var(--bg-1) !important;
+    border: 1px solid var(--green) !important;
+    box-shadow: var(--green-glow) !important;
+    transition: all 0.2s ease !important;
+}
+
+.button-38aScr:hover {
+    background: var(--bg-2) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 0 10px var(--green) !important;
+}
+
+/* Style des inputs */
+input, textarea, .input-2_SIlA {
+    background-color: var(--bg-1) !important;
+    border: 1px solid var(--green) !important;
+    color: var(--green) !important;
+    box-shadow: inset 0 0 5px var(--green) !important;
+}
+
+input:focus, textarea:focus, .input-2_SIlA:focus {
+    box-shadow: inset 0 0 10px var(--green), 0 0 5px var(--green) !important;
+    border-color: var(--green) !important;
+}
+
+/* Animation d'écriture */
+.slateTextArea-1Mkdgw {
+    background-color: transparent !important;
+    color: var(--green) !important;
+}
+
+/* Colorisation des éléments */
+.markup-2BOw-j,
+.username-1A8OIy,
+.channelName-2YrOjO,
+.title-29uC1r,
+.name-23GUGE,
+.headerText-3Uvj1Y,
+.roleColor-rz2vM0,
+.activity-2Gy-9S,
+.customStatus-3tC2ig,
+.textContent-3N7xXx,
+.timestamp-3ZCmNB,
+.separator-2I32lJ,
+.topic-TCb_qw,
+.content-1x5b-n,
+.categoryHeader-O1zU94,
+.base-1pYU8j,
+.searchBar-3dMhjb,
+.searchBarComponent-32dTOx {
+    color: var(--green) !important;
+}
+
+/* Style des placeholders */
+::placeholder,
+.placeholder-37qJjk {
+    color: var(--green-2) !important;
+    opacity: 0.5;
+} 
